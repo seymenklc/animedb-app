@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+import { ToastContainer } from 'react-toastify';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 // pages
 import Landing from '@/pages/Landing';
@@ -8,14 +10,17 @@ import Favorites from '@/components/Favorites/Favorites';
 
 export default function Router() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Landing />} />
-          <Route path='favorites' element={<Favorites />} />
-          <Route path='anime/:id' element={<Details />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Fragment>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Landing />} />
+            <Route path='favorites' element={<Favorites />} />
+            <Route path='anime/:id' element={<Details />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      <ToastContainer theme="dark" position="bottom-center" />
+    </Fragment>
   );
 }

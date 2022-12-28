@@ -1,9 +1,7 @@
 import { Streaming } from "@/types";
 // icons
-import { SiMyanimelist } from 'react-icons/si';
 import { SiCrunchyroll } from 'react-icons/si';
 import { SiNetflix } from 'react-icons/si';
-// components
 import { Funimation } from "@/components/Elements/Icons/Funimation";
 
 interface Props {
@@ -29,9 +27,6 @@ export default function Icons({ streaming, link }: Props) {
                );
             }
          })}
-         <a href={link} target="_blank" className="icon mt-2">
-            <SiMyanimelist className="icon scale-105 " />
-         </a>
       </div>
    );
 }
