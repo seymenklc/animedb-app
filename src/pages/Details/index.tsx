@@ -12,9 +12,9 @@ export default function Details() {
     const { data: single } = useGetAnimeFullByIdQuery(id as string);
 
     const anime = single?.data;
-    console.log(anime);
+
     return (
-        <div className='flex gap-3 mt-8 px-5'>
+        <div className='flex flex-col lg:flex-row items-center gap-3 mt-8 px-5'>
             <div className='flex-1'>
                 <h1 className='title'>{anime?.title}</h1>
                 {anime?.trailer.embed_url && (
