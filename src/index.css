@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background: hsl(208, 21%, 12%);
+}
+
+@layer components {
+    .app-container {
+        @apply container max-w-7xl mx-auto h-full;
+    }
+
+    .title {
+        @apply text-slate-200 text-3xl font-bold cursor-default;
+    }
+
+    .icon {
+        @apply scale-150 text-slate-300;
+    }
+}
