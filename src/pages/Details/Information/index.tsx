@@ -11,7 +11,7 @@ interface Props {
 
 export default function Information({ anime }: Props) {
    return (
-      <div className="flex mt-5 px-4 items-end lg:items-start">
+      <div className="flex mt-5 px-4 lg:px-0 items-end lg:items-start">
          <div className='flex flex-col items-center sm:flex-row gap-3 flex-1'>
             <img
                className='h-96 w-60 rounded mb-10 lg:mb-0'

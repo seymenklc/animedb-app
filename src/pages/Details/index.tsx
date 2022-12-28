@@ -16,7 +16,7 @@ export default function Details() {
     return (
         <div className='flex flex-col lg:flex-row items-center gap-3 mt-8 px-5'>
             <div className='flex-1'>
-                <h1 className='title'>{anime?.title}</h1>
+                <h1 className='title text-center md:text-start'>{anime?.title}</h1>
                 {anime?.trailer.embed_url && (
                     <iframe
                         src={disableAutoplay(anime.trailer.embed_url)}
