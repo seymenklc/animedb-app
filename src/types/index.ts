@@ -212,6 +212,11 @@ export interface Meta {
     total: number;
 }
 
+export interface QueryResponse {
+    pagination: Pagination;
+    data: SingleAnime[];
+}
+
 export interface AnimeResponse {
     data: SingleAnime[];
     links: Links;
