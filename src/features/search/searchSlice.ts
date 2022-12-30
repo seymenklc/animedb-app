@@ -1,3 +1,4 @@
+import { RootState } from "@/app/redux/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface SearchState {
@@ -15,10 +16,13 @@ export const searchSlice = createSlice({
    initialState,
    reducers: {
       setQuery: (state, action) => {
-
+         state.query = action.payload;
       },
-      setResult: (state, action) => {
-
-      }
    }
 });
+
+export const { setQuery } = searchSlice.actions;
+
+export default searchSlice.reducer;
+
+export const selectQuery = (state: RootState) => state.search.query;

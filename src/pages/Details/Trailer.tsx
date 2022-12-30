@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+// components
 import Skeleton from "@/components/Layout/Skeleton";
 
 interface Props {
@@ -6,7 +8,8 @@ interface Props {
 
 export default function Trailer({ url }: Props) {
   return (
-    <>
+    <Fragment>
+      {!url && <Skeleton count={1} height={400} />}
       {url && (
         <iframe
           src={url}
@@ -14,7 +17,6 @@ export default function Trailer({ url }: Props) {
           className="w-full h-[400px] mt-5 rounded-md shadow-md"
         />
       )}
-      {!url && <Skeleton count={1} height={400} />}
-    </>
+    </Fragment>
   );
 }
