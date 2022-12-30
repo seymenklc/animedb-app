@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Input() {
    const [search, setSearch] = useState('');
+   const [open, setOpen] = useState(false);
 
    const navigate = useNavigate();
    const dispatch = useAppDispatch();
@@ -17,6 +18,12 @@ export default function Input() {
    const handleSearchItemClick = () => {
       setSearch('');
       dispatch(setQuery(''));
+   };
+
+   const handleBlur = () => {
+      setTimeout(() => {
+         setOpen(false);
+      }, 200);
    };
 
    useEffect(() => {
@@ -44,11 +51,13 @@ export default function Input() {
             placeholder='Search'
             value={search}
             onChange={e => setSearch(e.target.value)}
+            onFocus={() => setOpen(true)}
+            onBlur={handleBlur}
             className="bg-gray-700 rounded-md w-full lg:w-[180px] 
-            border-none outline-none py-1 px-8 text-slate-200
+            border-none outline-none py-1 px-8 text-slate-200 
             md:focus-within:w-96 duration-500 ease-in-out focus-within:py-2"
          />
-         {search && <Search handleSearchItemClick={handleSearchItemClick} />}
+         {open && <Search handleSearchItemClick={handleSearchItemClick} />}
       </div>
    );
 }

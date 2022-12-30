@@ -12,7 +12,8 @@ interface Props {
 
 export default function Search({ handleSearchItemClick }: Props) {
    const query = useAppSelector(selectQuery);
-   const { data, isFetching, refetch } = useGetAnimeBySearchQuery(query, {
+
+   const { data, isFetching } = useGetAnimeBySearchQuery(query, {
       refetchOnMountOrArgChange: true,
    });
 
