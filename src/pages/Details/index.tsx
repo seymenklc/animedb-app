@@ -20,7 +20,9 @@ export default function Details() {
                 <h1 className='title text-center hidden sm:block md:text-start'>
                     {anime?.title}
                 </h1>
-                <Trailer url={disableAutoplay(anime?.trailer?.embed_url)} />
+                {anime?.trailer.embed_url && (
+                    <Trailer url={disableAutoplay(anime.trailer.embed_url)} />
+                )}
                 <Info anime={anime} />
                 <Synopsis synopsis={anime?.synopsis} />
             </div>

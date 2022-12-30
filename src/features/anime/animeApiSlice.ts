@@ -34,7 +34,8 @@ export const animeApiSlice = apiSlice.injectEndpoints({
          query: (query) => `/anime?letter=${query}`
       }),
       getAnimeByGenre: builder.query<QueryResponse, string>({
-         query: (genre) => `/anime?genre=${genre}`
+         query: (genre) => `/anime?genre=${genre}`,
+         keepUnusedDataFor: 0,
       })
    })
 });
