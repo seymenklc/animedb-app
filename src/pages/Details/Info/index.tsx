@@ -1,8 +1,8 @@
+import { Fragment } from 'react';
 import { SingleAnime } from "@/types";
 // components
 import Genres from "@/pages/Details/Info/Genres";
 import Statics from "@/pages/Details/Info/Statics";
-import Skeleton from "@/components/Layout/Skeleton";
 import Loader from "@/pages/Details/Info/Loader";
 
 interface Props {
@@ -14,7 +14,7 @@ export default function Info({ anime }: Props) {
     <div className="flex flex-col items-center lg:items-stretch sm:flex-row h-max mt-6">
       {!anime && <Loader />}
       {anime && (
-        <>
+        <Fragment>
           <img
             className="mb-9 md:mb-0 h-96 w-60 rounded-md"
             src={anime?.images.webp.large_image_url}
@@ -28,7 +28,7 @@ export default function Info({ anime }: Props) {
             </div>
             <Genres genres={anime?.genres} />
           </div>
-        </>
+        </Fragment>
       )}
     </div>
   );

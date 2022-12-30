@@ -1,14 +1,11 @@
 // components
 import Card from "@/components/Card/Card";
-
 import Skeleton from "@/components/Layout/Skeleton";
-
 // redux
 import { useGetWatchPopularEpisodesQuery } from "@/features/anime/animeApiSlice";
 
 export default function Populer() {
-  const { data: populerEpisodes, isLoading } =
-    useGetWatchPopularEpisodesQuery(undefined);
+  const { data: populerEpisodes, isLoading } = useGetWatchPopularEpisodesQuery(undefined);
 
   return (
     <section>

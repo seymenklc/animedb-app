@@ -1,5 +1,6 @@
-import ReadMoreReadLess from "@/components/ReadMoreReadLess";
+// components
 import Skeleton from "@/components/Layout/Skeleton";
+import ReadMoreReadLess from "@/components/ReadMoreReadLess";
 
 interface Props {
   synopsis?: string;

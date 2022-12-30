@@ -212,7 +212,6 @@ export interface Meta {
     total: number;
 }
 
-
 export interface QueryResponse {
     pagination: Pagination;
     data: SingleAnime[];
