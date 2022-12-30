@@ -26,7 +26,7 @@ export default function Hero() {
                     disableOnInteraction: true,
                 }}
                 modules={[Autoplay]}
-                className="mySwiper rounded-md w-[520px] sm:w-full"
+                className="mySwiper rounded-md  sm:w-full"
             >
                 {images.map(item => (
                     <SwiperSlide key={item.mal_id} className='group'>
