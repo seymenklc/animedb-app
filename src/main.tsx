@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ToastContainer } from 'react-toastify';
 // router
 import Router from '@/app/router';
 // redux
@@ -15,6 +16,7 @@ ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <Provider store={store}>
       <Router />
+      <ToastContainer theme="dark" position="bottom-center" />
     </Provider>
   </React.StrictMode>
 );

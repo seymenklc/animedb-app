@@ -14,6 +14,7 @@ export default function Statics({ anime }: Props) {
             <span>Ranked:</span>
             <span>Populerity:</span>
             <span>Episodes:</span>
+            {anime?.episodes && <span>Year:</span>}
             <span>Season:</span>
             <span>Status:</span>
             <span>Studios:</span>
@@ -24,6 +25,7 @@ export default function Statics({ anime }: Props) {
             <span>{anime?.rank}</span>
             <span>{anime?.popularity}</span>
             <span>{anime?.episodes}</span>
+            <span>{anime?.year}</span>
             <span>{anime?.season}</span>
             <span>{anime?.status}</span>
             <span>{anime?.studios[0].name}</span>
