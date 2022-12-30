@@ -1,5 +1,5 @@
 import { apiSlice } from "@/features/api/apiSlice";
-import type { AnimeResponse, NewReleases, SingleAnimeResponse } from '@/types';
+import type { AnimeResponse, NewReleases, QueryResponse, SingleAnimeResponse } from '@/types';
 
 export const animeApiSlice = apiSlice.injectEndpoints({
    endpoints: (builder) => ({
@@ -29,6 +29,12 @@ export const animeApiSlice = apiSlice.injectEndpoints({
       }),
       getAnimeFullById: builder.query<SingleAnimeResponse, string>({
          query: (id) => `/anime/${id}/full`
+      }),
+      getAnimeBySearch: builder.query<QueryResponse, string>({
+         query: (query) => `/anime?letter=${query}`
+      }),
+      getAnimeByGenre: builder.query<QueryResponse, string>({
+         query: (genre) => `/anime?genre=${genre}`
       })
    })
 });
@@ -38,4 +44,5 @@ export const {
    useGetWatchRecentEpisodesQuery,
    useGetWatchPopularEpisodesQuery,
    useGetAnimeFullByIdQuery,
+   useGetAnimeBySearchQuery
 } = animeApiSlice;
