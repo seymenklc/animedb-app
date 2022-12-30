@@ -5,7 +5,8 @@ import Cards from "@/components/Card/Cards";
 export default function Landing() {
     return (
         <div className="p-4">
-            <Hero />
+            <Hero /> 
+        
             <Cards />
         </div>
     );

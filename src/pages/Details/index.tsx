@@ -10,7 +10,7 @@ import { disableAutoplay } from '@/utils';
 
 export default function Details() {
     const { id } = useParams();
-    const { data: single } = useGetAnimeFullByIdQuery(id as string);
+    const { data: single,isLoading } = useGetAnimeFullByIdQuery(id as string);
 
     const anime = single?.data;
 

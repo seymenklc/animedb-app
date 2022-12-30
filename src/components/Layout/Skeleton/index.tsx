@@ -4,7 +4,7 @@ import Skeleton from "react-loading-skeleton";
 interface Props {
    count: number;
    height: number;
-   width: number;
+   width?: number;
 }
 
 const skeletonBaseColor = "#404258";
