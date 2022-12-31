@@ -6,7 +6,7 @@ import Landing from '@/pages/Landing';
 import Details from '@/pages/Details';
 // components
 import Layout from '@/components/Layout';
-import Favorites from '@/components/Favorites/Favorites';
+import Favorites from '@/pages/Favorites/Favorites';
 
 export default function Router() {
   return (
