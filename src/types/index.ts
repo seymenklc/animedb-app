@@ -105,6 +105,11 @@ export interface Genre {
     type: string;
     name: string;
     url: string;
+    count?: number;
+}
+
+export interface GenreResponse {
+    data: Genre[];
 }
 
 export interface Theme {

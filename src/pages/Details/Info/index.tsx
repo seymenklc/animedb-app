@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { SingleAnime } from "@/types";
 // components
-import Genres from "@/pages/Details/Info/Genres";
 import Statics from "@/pages/Details/Info/Statics";
 import Loader from "@/pages/Details/Info/Loader";
+import Genres from '@/components/Genres';
 
 interface Props {
   anime?: SingleAnime;
@@ -26,7 +26,7 @@ export default function Info({ anime }: Props) {
             <div className="flex justify-between text-slate-400 text-lg pl-3">
               <Statics anime={anime} />
             </div>
-            <Genres genres={anime?.genres} />
+            <Genres genres={anime.genres} />
           </div>
         </Fragment>
       )}

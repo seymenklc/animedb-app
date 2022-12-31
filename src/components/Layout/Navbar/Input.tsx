@@ -6,13 +6,11 @@ import { useAppDispatch } from '@/app/redux/hooks';
 import { AiOutlineSearch } from 'react-icons/ai';
 // components
 import Search from '@/components/Layout/Navbar/Search';
-import { useNavigate } from 'react-router-dom';
 
 export default function Input() {
-   const [search, setSearch] = useState('');
    const [open, setOpen] = useState(false);
+   const [search, setSearch] = useState('');
 
-   const navigate = useNavigate();
    const dispatch = useAppDispatch();
 
    const handleSearchItemClick = () => {
@@ -27,20 +25,7 @@ export default function Input() {
    };
 
    useEffect(() => {
-      const keyDownHandler = (e: KeyboardEvent) => {
-         if (e.key === 'Enter') {
-            navigate('/search');
-            return;
-         };
-      };
-
       dispatch(setQuery(search));
-
-      document.addEventListener('keydown', keyDownHandler);
-
-      return () => {
-         document.removeEventListener('keydown', keyDownHandler);
-      };
    }, [search, dispatch]);
 
    return (

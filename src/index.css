@@ -8,6 +8,7 @@ body,
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     background: hsl(208, 21%, 12%);
+    @apply scrollbar-thin scrollbar-thumb-slate-500 scrollbar-track-slate-600;
 }
 
 @layer components {

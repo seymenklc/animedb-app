@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import { ToastContainer } from 'react-toastify';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 // pages
+import Search from '@/pages/Search';
 import Landing from '@/pages/Landing';
 import Details from '@/pages/Details';
 // components
@@ -16,11 +16,12 @@ export default function Router() {
           <Route path='/' element={<Layout />}>
             <Route index element={<Landing />} />
             <Route path='favorites' element={<Favorites />} />
+            <Route path='search' element={<Search />} />
             <Route path='anime/:id' element={<Details />} />
+            <Route path='genre/:id' element={<Search />} />
           </Route>
         </Routes>
       </BrowserRouter>
-      <ToastContainer theme="dark" position="bottom-center" />
     </Fragment>
   );
 }

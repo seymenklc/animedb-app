@@ -1,5 +1,5 @@
 import { apiSlice } from "@/features/api/apiSlice";
-import type { AnimeResponse, NewReleases, QueryResponse, SingleAnimeResponse } from '@/types';
+import type { AnimeResponse, GenreResponse, NewReleases, QueryResponse, SingleAnimeResponse } from '@/types';
 
 export const animeApiSlice = apiSlice.injectEndpoints({
    endpoints: (builder) => ({
@@ -31,12 +31,15 @@ export const animeApiSlice = apiSlice.injectEndpoints({
          query: (id) => `/anime/${id}/full`
       }),
       getAnimeBySearch: builder.query<QueryResponse, string>({
-         query: (query) => `/anime?letter=${query}`
+         query: (query) => `/anime?letter=${query}`,
+         keepUnusedDataFor: 0,
+      }),
+      getGenres: builder.query<GenreResponse, undefined>({
+         query: () => '/genres/anime',
       }),
       getAnimeByGenre: builder.query<QueryResponse, string>({
-         query: (genre) => `/anime?genre=${genre}`,
-         keepUnusedDataFor: 0,
-      })
+         query: (genreId) => `/anime?genres=${genreId || ''}`,
+      }),
    })
 });
 
