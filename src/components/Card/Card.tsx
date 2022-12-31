@@ -14,7 +14,7 @@ export default function Card({ item }: Props) {
                 style={{ borderRadius: '4px' }}
                 src={item.images.webp.large_image_url}
                 alt={item.title}
-                className="sm:h-96 h-72 w-48 sm:w-64 object-cover lg:h-80
+                className="h-56 w-48 sm:w-64 object-cover lg:h-72
                 group-hover:scale-105 transition-all duration-200 ease-out"
             />
             <div

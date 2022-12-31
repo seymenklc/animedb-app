@@ -18,6 +18,7 @@ export default function Router() {
             <Route path='favorites' element={<Favorites />} />
             <Route path='search' element={<Search />} />
             <Route path='anime/:id' element={<Details />} />
+            <Route path='genre/:id' element={<Search />} />
           </Route>
         </Routes>
       </BrowserRouter>

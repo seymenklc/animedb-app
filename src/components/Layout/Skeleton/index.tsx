@@ -7,8 +7,8 @@ interface Props {
    width?: number;
 }
 
-const skeletonBaseColor = "#404258";
-const skeletonHighlightColor = "#50577A";
+const baseColor = "#404258";
+const highlightColor = "#50577A";
 
 export default function index({ count, height, width }: Props) {
    return (
@@ -18,8 +18,8 @@ export default function index({ count, height, width }: Props) {
                key={idx}
                height={height}
                width={width}
-               baseColor={skeletonBaseColor}
-               highlightColor={skeletonHighlightColor}
+               baseColor={baseColor}
+               highlightColor={highlightColor}
             />
          ))}
       </Fragment>

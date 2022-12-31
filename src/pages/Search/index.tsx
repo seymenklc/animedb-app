@@ -1,5 +1,8 @@
+
 export default function Search() {
    return (
-      <div>index</div>
+      <div>
+         Search
+      </div>
    );
 }

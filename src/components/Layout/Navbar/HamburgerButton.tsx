@@ -1,12 +1,20 @@
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Fragment, useState } from "react";
+// components
+import NavItems from "@/components/Layout/Navbar/NavItems";
 
 export default function HamburgerButton() {
     const [mobileMenu, setMobileMenu] = useState(false);
 
+    const handleBlur = () => {
+        setTimeout(() => {
+            setMobileMenu(false);
+        }, 100);
+    };
+
     return (
-        <>
+        <Fragment>
             <button
+                onBlur={handleBlur}
                 onClick={() => setMobileMenu(!mobileMenu)}
                 type="button"
                 className="md:hidden inline-flex items-center p-2 text-sm bg-gray-800
@@ -18,30 +26,12 @@ export default function HamburgerButton() {
             </button>
             {/* menu items */}
             <nav className={`${mobileMenu ? 'visible ' : 'hidden'} absolute top-20 right-8 z-10 w-44 rounded shadow dark:bg-gray-700`}>
-                <ul className="py-1 text-sm text-gray-700 dark:text-gray-200">
-                    <li>
-                        <Link to='/' className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Dashboard
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/' className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Settings
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/' className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Earnings
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/' className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Sign out
-                        </Link>
-                    </li>
-                </ul>
+                <div className="py-1 text-sm text-gray-700 dark:text-gray-200">
+                    <div className="flex flex-col py-1 px-4">
+                        <NavItems />
+                    </div>
+                </div>
             </nav>
-
-        </>
+        </Fragment>
     );
 }
