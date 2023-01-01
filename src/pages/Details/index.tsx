@@ -11,7 +11,7 @@ import { disableAutoplay } from '@/utils';
 
 export default function Details() {
     const { id } = useParams();
-    const { data: single } = useGetAnimeFullByIdQuery(id as string);
+    const { data: single, isLoading } = useGetAnimeFullByIdQuery(id as string);
 
     const anime = single?.data;
 
@@ -19,14 +19,13 @@ export default function Details() {
         <div className='flex flex-col lg:flex-row gap-3 mt-8 px-5 overflow-x-hidden'>
             <div className='flex-1 flex flex-col gap-2'>
                 <div className='items-center justify-between hidden sm:flex'>
-                    <h1 className='title text-center md:text-start'>
-                        {anime?.title}
-                    </h1>
+                    <h1 className='title text-center md:text-start'>{anime?.title}</h1>
                     <AddToFavorites payload={anime} />
                 </div>
-                {anime?.trailer.embed_url && (
-                    <Trailer url={disableAutoplay(anime.trailer.embed_url)} />
-                )}
+                <Trailer
+                    isLoading={isLoading}
+                    url={disableAutoplay(anime?.trailer.embed_url)}
+                />
                 <Info anime={anime} />
                 <Synopsis synopsis={anime?.synopsis} />
             </div>
