@@ -44,7 +44,7 @@ export default function AddToFavorites({ payload, size = 30 }: Props) {
          />
          {clicked && <Lottie
             loop={false}
-            className='absolute z-20 -top-8 left-1/2 transform -translate-x-1/2 cursor-pointer'
+            className='absolute z-20 -top-8 left-1/2 transform -translate-x-1/2'
             style={{ width: 120, height: 80 }}
             onComplete={() => setClicked(false)}
             animationData={animationData}
