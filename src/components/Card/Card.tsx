@@ -3,8 +3,6 @@ import { Entry, SingleAnime } from "@/types";
 
 interface Props {
     item: SingleAnime | Entry;
-    height?: string;
-    width?: string;
 }
 
 export default function Card({ item }: Props) {
@@ -14,7 +12,7 @@ export default function Card({ item }: Props) {
                 style={{ borderRadius: '4px' }}
                 src={item.images.webp.large_image_url}
                 alt={item.title}
-                className="h-56 w-48 sm:w-64 object-cover lg:h-72
+                className="h-60 w-36 sm:w-48 sm:h-72 lg:h-72 object-cover
                 group-hover:scale-105 transition-all duration-200 ease-out"
             />
             <div

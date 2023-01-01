@@ -5,6 +5,7 @@ import { SingleAnime } from '@/types';
 import { CgHeart } from 'react-icons/cg';
 import Lottie from 'lottie-react';
 import animationData from '@/assets/lotties/confeti.json';
+import { useParams } from 'react-router-dom';
 
 interface Props {
    payload?: SingleAnime;
@@ -12,6 +13,8 @@ interface Props {
 }
 
 export default function AddToFavorites({ payload, size = 30 }: Props) {
+   const { id } = useParams();
+
    const [isLiked, setIsLiked] = useState(false);
    const [clicked, setClicked] = useState(false);
 
@@ -32,7 +35,7 @@ export default function AddToFavorites({ payload, size = 30 }: Props) {
    useEffect(() => {
       favorites.find(item => item.mal_id === payload?.mal_id)
          ? setIsLiked(true) : setIsLiked(false);
-   }, [favorites]);
+   }, [favorites, id]);
 
    return (
       <div className='relative'>
