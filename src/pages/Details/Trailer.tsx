@@ -4,13 +4,14 @@ import Skeleton from "@/components/Layout/Skeleton";
 
 interface Props {
   url?: string;
+  isLoading: boolean;
 }
 
-export default function Trailer({ url }: Props) {
+export default function Trailer({ url, isLoading }: Props) {
   return (
     <Fragment>
-      {!url && <Skeleton count={1} height={400} />}
-      {url && (
+      {isLoading && <Skeleton count={1} height={400} />}
+      {!isLoading && url && (
         <iframe
           src={url}
           allowFullScreen={false}
