@@ -20,7 +20,7 @@ export default function Details() {
             <div className='flex-1 flex flex-col gap-2'>
                 <div className='items-center justify-between hidden sm:flex'>
                     <h1 className='title text-center md:text-start'>{anime?.title}</h1>
-                    <AddToFavorites payload={anime} />
+                    {anime && <AddToFavorites payload={anime} />}
                 </div>
                 <Trailer
                     isLoading={isLoading}
