@@ -5,9 +5,9 @@ import Info from '@/pages/Details/Info';
 import Trailer from '@/pages/Details/Trailer';
 import Synopsis from '@/pages/Details/Synopsis';
 import Populer from '@/pages/Details/Populer';
+import AddToFavorites from '@/components/AddToFavorites';
 // utils
 import { disableAutoplay } from '@/utils';
-import AddToFavorites from '@/components/AddToFavorites';
 
 export default function Details() {
     const { id } = useParams();
@@ -18,8 +18,8 @@ export default function Details() {
     return (
         <div className='flex flex-col lg:flex-row gap-3 mt-8 px-5 overflow-x-hidden'>
             <div className='flex-1 flex flex-col gap-2'>
-                <div className='flex items-center justify-between'>
-                    <h1 className='title text-center hidden sm:block md:text-start'>
+                <div className='items-center justify-between hidden sm:flex'>
+                    <h1 className='title text-center md:text-start'>
                         {anime?.title}
                     </h1>
                     <AddToFavorites payload={anime} />
