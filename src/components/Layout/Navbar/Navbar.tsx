@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 // components
 import Input from '@/components/Layout/Navbar/Input';
+import NavItems from '@/components/Layout/Navbar/NavItems';
 import HamburgerButton from '@/components/Layout/Navbar/HamburgerButton';
 
 export default function Navbar() {
@@ -12,12 +13,7 @@ export default function Navbar() {
                 </Link>
                 <div className="md:flex gap-7 items-center hidden">
                     <nav className="flex items-center gap-3 text-slate-200 text-xl lg:text-lg">
-                        <Link to='/' className='hover:bg-gray-700 p-2 rounded-md transition-all duration-300'>
-                            Home
-                        </Link>
-                        <Link to='/favorites' className='hover:bg-gray-700 p-2 rounded-md transition-all duration-300'>
-                            Favorites
-                        </Link>
+                        <NavItems />
                     </nav>
                     <Input />
                 </div>

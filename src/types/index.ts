@@ -105,6 +105,11 @@ export interface Genre {
     type: string;
     name: string;
     url: string;
+    count?: number;
+}
+
+export interface GenreResponse {
+    data: Genre[];
 }
 
 export interface Theme {
@@ -211,7 +216,6 @@ export interface Meta {
     to: number;
     total: number;
 }
-
 
 export interface QueryResponse {
     pagination: Pagination;

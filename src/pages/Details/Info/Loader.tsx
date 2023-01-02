@@ -1,8 +1,10 @@
+import { Fragment } from "react";
+// components
 import Skeleton from "@/components/Layout/Skeleton";
 
 export default function () {
   return (
-    <>
+    <Fragment>
       <div className="mb-9 md:mb-0 rounded-md">
         <Skeleton count={1} width={240} height={384} />
       </div>
@@ -14,6 +16,6 @@ export default function () {
           <Skeleton count={1} width={570} height={384} />
         </div>
       </div>
-    </>
+    </Fragment>
   );
 }
