@@ -3,9 +3,7 @@ import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // components
 import Slide from "@/components/Hero/Slide";
-// styles 
-import "swiper/css";
-import "swiper/css/navigation";
+
 
 export default function Hero() {
     return (
@@ -26,7 +24,7 @@ export default function Hero() {
                     disableOnInteraction: true,
                 }}
                 modules={[Autoplay]}
-                className="mySwiper rounded-md  sm:w-full"
+                className="mySwiper rounded-md sm:w-full"
             >
                 {images.map(item => (
                     <SwiperSlide key={item.mal_id} className='group'>

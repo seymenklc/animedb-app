@@ -7,7 +7,7 @@ import CardSection from "@/components/Card/CardSection";
 
 export default function NewReleases() {
     const { data, isLoading, error } = useGetWatchRecentEpisodesQuery(undefined);
-
+    console.log(data);
     return (
         <CardSection title='New Releases'>
             {isLoading && <Skeleton count={6} width={192} height={288} />}

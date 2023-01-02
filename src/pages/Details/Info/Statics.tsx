@@ -8,9 +8,9 @@ interface Props {
 
 const keys = ['type', 'score', 'rank', 'popularity', 'episodes', 'year', 'season', 'status', 'studios'];
 
-function isAnAnimeProperty(str: string): str is keyof SingleAnime {
+const isAnAnimeProperty = (str: string): str is keyof SingleAnime => {
    return keys.includes(str);
-}
+};
 
 export default function Statics({ anime }: Props) {
    return (
