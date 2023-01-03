@@ -5,9 +5,11 @@ import Footer from "@/components/Layout/Footer/Footer";
 
 export default function Layout() {
   return (
-    <main className="h-screen app-container">
-      <Navbar />
-      <Outlet />
+    <main className="min-h-screen app-container flex flex-col justify-between gap-12">
+      <div>
+        <Navbar />
+        <Outlet />
+      </div>
       <Footer />
     </main>
   );
