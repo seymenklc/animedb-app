@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// toastify
 import { ToastContainer } from 'react-toastify';
 // router
 import router from '@/app/router';
 import { RouterProvider } from 'react-router-dom';
 // redux
-import { store } from '@/app/redux/store';
 import { Provider } from 'react-redux';
+import { store } from '@/app/redux/store';
 // styling
-import 'react-loading-skeleton/dist/skeleton.css';
 import './index.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 import "swiper/css";
 import "swiper/css/navigation";
-import 'swiper/css/navigation';
+
 
 const root = document.getElementById('root') as HTMLElement;
 
