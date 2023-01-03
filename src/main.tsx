@@ -8,8 +8,11 @@ import { RouterProvider } from 'react-router-dom';
 import { store } from '@/app/redux/store';
 import { Provider } from 'react-redux';
 // styling
-import './index.css';
 import 'react-loading-skeleton/dist/skeleton.css';
+import './index.css';
+import "swiper/css";
+import "swiper/css/navigation";
+import 'swiper/css/navigation';
 
 const root = document.getElementById('root') as HTMLElement;
 
