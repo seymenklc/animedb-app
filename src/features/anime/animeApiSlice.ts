@@ -1,5 +1,5 @@
 import { apiSlice } from "@/features/api/apiSlice";
-import type { AnimeResponse, GenreResponse, NewReleases, QueryResponse, SingleAnimeResponse } from '@/types';
+import type { AnimeResponse, CharactersResponse, GenreResponse, NewReleases, QueryResponse, SingleAnimeResponse } from '@/types';
 
 export const animeApiSlice = apiSlice.injectEndpoints({
    endpoints: (builder) => ({
@@ -40,6 +40,12 @@ export const animeApiSlice = apiSlice.injectEndpoints({
       getAnimeByGenre: builder.query<QueryResponse, string>({
          query: (genreId) => `/anime?genres=${genreId || ''}`,
       }),
+      getTopCharacters: builder.query<CharactersResponse, undefined>({
+         query: () => '/top/characters',
+         transformResponse: (response: CharactersResponse) => {
+            return { ...response, data: response.data?.slice(0, 4) };
+         },
+      })
    })
 });
 
@@ -48,5 +54,6 @@ export const {
    useGetWatchRecentEpisodesQuery,
    useGetWatchPopularEpisodesQuery,
    useGetAnimeFullByIdQuery,
-   useGetAnimeBySearchQuery
+   useGetAnimeBySearchQuery,
+   useGetTopCharactersQuery
 } = animeApiSlice;
