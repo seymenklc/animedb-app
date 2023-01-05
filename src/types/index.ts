@@ -253,3 +253,30 @@ export interface NewReleases {
     pagination: Pagination;
     data: NewReleaseItem[];
 }
+
+export interface CharacterType {
+    mal_id: number;
+    url: string;
+    images: {
+        webp: {
+            image_url: string;
+            small_image_url: string;
+        };
+    };
+    name: string;
+    name_kanji: string;
+    nicknames: string[];
+    favorites: number;
+    about: string;
+}
+
+export interface Items {
+    count: number;
+    total: number;
+    per_page: number;
+}
+
+export interface CharactersResponse {
+    data: CharacterType[];
+    pagination: Pagination;
+}
