@@ -10,7 +10,7 @@ export default function Characters() {
 
    return (
       <Fragment>
-         <h3 className="title mb-8">Top Characters</h3>
+         <h3 className="title text-center lg:text-left mb-8">Top Characters</h3>
          <div className="flex justify-center gap-8 flex-wrap">
             {isLoading && <Skeleton count={4} width={288} height={384} />}
             {data?.data.map(item => (
