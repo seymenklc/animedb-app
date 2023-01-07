@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 // components
 import Skeleton from "@/components/Layout/Skeleton";
-import ReadMoreReadLess from "@/components/ReadMoreReadLess";
+import ReadMoreReadLess from "@/components/Elements/ReadMoreReadLess";
 
 interface Props {
   synopsis?: string;

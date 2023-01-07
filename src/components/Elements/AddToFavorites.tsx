@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
+import { CgHeart } from 'react-icons/cg';
+import { useParams } from 'react-router-dom';
+// redux
 import { useAppDispatch, useAppSelector } from '@/app/redux/hooks';
 import { addFavorite, deleteFavorite, selectFavorites } from '@/features/favorites/favoritesSlice';
-import { SingleAnime } from '@/types';
-import { CgHeart } from 'react-icons/cg';
+// lottie
 import Lottie from 'lottie-react';
 import animationData from '@/assets/lotties/confeti.json';
-import { useParams } from 'react-router-dom';
+// types
+import { SingleAnime } from '@/types';
 
 interface Props {
    payload?: SingleAnime;

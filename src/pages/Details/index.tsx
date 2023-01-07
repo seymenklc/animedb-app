@@ -5,7 +5,7 @@ import Info from '@/pages/Details/Info';
 import Trailer from '@/pages/Details/Trailer';
 import Synopsis from '@/pages/Details/Synopsis';
 import Populer from '@/pages/Details/Populer';
-import AddToFavorites from '@/components/AddToFavorites';
+import AddToFavorites from '@/components/Elements/AddToFavorites';
 // utils
 import { disableAutoplay } from '@/utils';
 

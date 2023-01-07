@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // redux
 import { useGetGenresQuery } from "@/features/anime/animeApiSlice";
 // components
-import Spinner from "@/components/Spinner";
+import Spinner from "@/components/Layout/Spinner";
 import GenreItem from "@/components/Genres/GenreItem";
 
 export default function TopBar() {

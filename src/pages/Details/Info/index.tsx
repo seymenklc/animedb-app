@@ -4,7 +4,7 @@ import { SingleAnime } from "@/types";
 import Loader from "@/pages/Details/Info/Loader";
 import Genres from '@/components/Genres';
 import Statics from "@/pages/Details/Info/Statics";
-import AddToFavorites from '@/components/AddToFavorites';
+import AddToFavorites from '@/components/Elements/AddToFavorites';
 
 interface Props {
   anime?: SingleAnime;
