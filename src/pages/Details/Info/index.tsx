@@ -16,10 +16,12 @@ export default function Info({ anime }: Props) {
       {!anime && <Loader />}
       {anime && (
         <Fragment>
-          <img
-            className="mb-9 md:mb-0 h-96 w-60 rounded-md"
-            src={anime?.images.webp.large_image_url}
-          />
+          <a href={anime.url} target="_blank" className='hover:ring-2 ring-slate-500 rounded-md'>
+            <img
+              className="mb-9 md:mb-0 h-96 w-60 rounded-md"
+              src={anime?.images.webp.large_image_url}
+            />
+          </a>
           <div className='flex flex-col items-center gap-3 sm:hidden mb-8'>
             <h2 className="title text-center">
               {anime?.title}
