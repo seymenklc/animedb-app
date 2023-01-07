@@ -13,6 +13,7 @@ export default function Details() {
     const { id } = useParams();
     const { data: single, isLoading } = useGetAnimeFullByIdQuery(id as string);
 
+
     const anime = single?.data;
 
     return (

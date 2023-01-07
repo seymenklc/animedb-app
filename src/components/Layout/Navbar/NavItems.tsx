@@ -8,7 +8,7 @@ export default function NavItems() {
             Home
          </Link>
          <Link to='/search' className='hover:bg-gray-700 p-2 rounded-md transition-all duration-300'>
-            Search
+            Filter
          </Link>
          <Link to='/favorites' className='hover:bg-gray-700 p-2 rounded-md transition-all duration-300'>
             Favorites
