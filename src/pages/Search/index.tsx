@@ -5,7 +5,7 @@ import { useGetAnimeByGenreQuery } from "@/features/anime/animeApiSlice";
 import TopBar from "@/pages/Search/TopBar";
 import Skeleton from "@/components/Layout/Skeleton";
 import GenreCards from "@/pages/Search/GenreCards";
-import Pagination from "@/components/Pagination";
+import Pagination from "@/components/Elements/Pagination";
 // hooks
 import { usePagination } from "@/hooks/usePagination";
 
