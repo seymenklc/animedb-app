@@ -6,7 +6,11 @@ import { useGetGenresQuery } from "@/features/anime/animeApiSlice";
 import Spinner from "@/components/Layout/Spinner";
 import GenreItem from "@/components/Genres/GenreItem";
 
-export default function TopBar() {
+interface Props {
+   setCurrentGenre: (genre: string) => void;
+}
+
+export default function TopBar({ setCurrentGenre }: Props) {
    const { data, isFetching } = useGetGenresQuery(undefined);
 
    return (
@@ -16,9 +20,17 @@ export default function TopBar() {
          {isFetching && <div className="flex justify-center w-full"><Spinner /></div>}
          {!isFetching && (
             <Fragment>
-               <Link to="/search" className="genre">All</Link>
+               <Link to="/search" className="genre" onClick={() => setCurrentGenre('All')}>
+                  All
+               </Link>
                {data?.data.map(genre => (
-                  <GenreItem genre={genre} key={genre.mal_id} />
+                  <div
+                     key={genre.mal_id}
+                     className="flex-none"
+                     onClick={() => setCurrentGenre(genre.name)}
+                  >
+                     <GenreItem genre={genre} />
+                  </div>
                ))}
             </Fragment>
          )}
